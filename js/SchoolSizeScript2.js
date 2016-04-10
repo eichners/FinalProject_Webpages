@@ -39,7 +39,6 @@ $.getJSON( "geojson/D13_polygon.geojson", function( data ) {
             "color":"#1381ab",
             "fillColor": 'White',
             "fillOpacity": 0.4
-
         };
         return style;
     };
@@ -80,7 +79,7 @@ $.getJSON( "geojson/D13_Enrollment_06-15_2.geojson", function( data ) {
             fillColor: markerColor(publicCharter, growthDecline),
             fillOpacity: 0.5,
             radius: markerRadius(growthDecline)
-    });
+        });
         return schoolMarker;
     }
 // find top range of G/D and set if/else stuff here for radius
@@ -99,7 +98,6 @@ $.getJSON( "geojson/D13_Enrollment_06-15_2.geojson", function( data ) {
            d > -500 ? 50 :
            d > -600 ? 60 :
                       70 ;
-
     }
 
     function markerColor (d, f) {
@@ -108,10 +106,9 @@ $.getJSON( "geojson/D13_Enrollment_06-15_2.geojson", function( data ) {
            d.substring(0,1) === "8" && f <= -1 ? '#1A68B2' :
            d.substring(0,1) === "1" && f >= 0 ? '#4CA120' :
            d.substring(0,1) === "1" && f <= 0 ? '#E82C0C' :
-                    '#E82C0C' ;
-                    
-}
-//  }
+                    '#E82C0C' ;           
+    }
+
 
 //Colors:
 // deep red E82C0C
@@ -119,17 +116,12 @@ $.getJSON( "geojson/D13_Enrollment_06-15_2.geojson", function( data ) {
 // bright blue 0439FF
 // lighter blue: F7E309
 // more teal blue: 1A68A1, 1A68B2
-
 // deep green: 06A12D
 // more yellow green: 4CA120
 // Yellow; F7D009
-
 // grey green: 569576
-
 // grey’ 899692
-// 808080
-// 878787
-// B8B8B8
+
 
     var schoolClick = function (Feature, layer) {
           /////// var popupText attemtps to make popup ignore 0 value properties and instead show first year with data for enrollment
@@ -145,7 +137,7 @@ $.getJSON( "geojson/D13_Enrollment_06-15_2.geojson", function( data ) {
     SchoolSizeGeoJSON = L.geoJson(schools, {
         pointToLayer: schoolPointToLayer,
         onEachFeature: schoolClick
-  });
+    });
 //addTo(map);
 
     // create layer controls
